@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const pool = require("../db");
 
 exports.postSignup = async (req, res) => {
+  console.log("req is here");
   const { username, email, password } = req.body;
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
